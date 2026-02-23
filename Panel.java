@@ -5,7 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 public class Panel extends JPanel {
-    Node[] nodes = new Node[8000];
+    Node[] nodes = new Node[4000];
     private int count = 0;
 
     public Panel() {
@@ -26,9 +26,13 @@ public class Panel extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.WHITE);
         for (int i = 0; i <= count; i++) {
+            g.setColor(Color.getHSBColor(nodes[i].r / (Phyllotaxis.HEIGHT / 2f), 1f, 0.8f));
             g.fillOval((int) nodes[i].x, (int) nodes[i].y, nodes[i].nodeR * 2, nodes[i].nodeR * 2);
+        }
+        if (count != nodes.length - 1) {
+            g.setColor(Color.WHITE);
+            g.drawLine(Phyllotaxis.WIDTH / 2, Phyllotaxis.HEIGHT / 2, (int) nodes[count].x + nodes[count].nodeR, (int) nodes[count].y + nodes[count].nodeR);
         }
     }
 }

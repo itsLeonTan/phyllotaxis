@@ -1,15 +1,15 @@
 public class Node {
     public int nodeR; // node's radius
-    private float r; // c * sqrt(n)
-    private float deg;
+    public float r; // c * sqrt(n)
+    public float deg;
 
     public float x;
     public float y;
     
     public Node(int count) {
-        nodeR = 2;
+        nodeR = 3;
 
-        r = (float) (3f * Math.sqrt(count));
+        r = (float) (4f * Math.sqrt(count));
         deg = (count * 137.5f) % 360f;
         float rad = (float) Math.toRadians(deg);
 
