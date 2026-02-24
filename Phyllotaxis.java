@@ -10,13 +10,15 @@ public class Phyllotaxis {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        //frame.setLayout(null);
+        frame.setLayout(null);
 
-        frame.add(new Panel());
+        MainPanel mainPanel = new MainPanel();
+        mainPanel.setBounds(400, 0, MainPanel.WIDTH, MainPanel.HEIGHT);
+        frame.add(mainPanel);
 
-        // Panel control = new Panel();
-        // control.setBounds(0, 0, 400, 600);
-        // frame.add(control);
+        ControlPanel controlPanel = new ControlPanel();
+        controlPanel.setBounds(0, 0, 400, 600);
+        frame.add(controlPanel);
 
         frame.setVisible(true);
     }    
